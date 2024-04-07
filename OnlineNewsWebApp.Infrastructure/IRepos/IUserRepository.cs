@@ -11,12 +11,14 @@ namespace OnlineNewsWebApp.Infrastructure.IRepos
         /// <param name="id"></param>
         /// <returns></returns>
         IList<IdentityRole> GetRoles(string id);
+
         /// <summary>
         /// Add role
         /// </summary>
         /// <param name="id"></param>
         /// <param name="roleIds"></param>
         void AddRoles(string id, IList<string> roleIds);
+
         /// <summary>
         /// Remove role
         /// </summary>

@@ -23,7 +23,7 @@ namespace OnlineNewsWebApp.Infrastructure.Database
         {
             base.OnModelCreating(modelBuilder);
 
-            // shorten the aspnet tables
+            // shorten the aspnet table names
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {
                 var tableName = entityType.GetTableName();

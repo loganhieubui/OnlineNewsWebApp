@@ -1,0 +1,59 @@
+﻿@model IList<PostViewModel>
+
+
+<!-- ======= Hero Slider Section ======= -->
+<section id="hero-slider" class="hero-slider">
+    <div class="container-md" data-aos="fade-in">
+        <div class="row">
+            <div class="col-12">
+                <div class="swiper sliderFeaturedPosts">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-1.jpg');">
+                                <div class="img-bg-inner">
+                                    <h2>@Model.First().Title</h2>
+                                    <p>@Model.First().ShortDescription</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-2.jpg');">
+                                <div class="img-bg-inner">
+                                    <h2>@Model.ElementAt(1).Title</h2>
+                                    <p>@Model.ElementAt(1).ShortDescription</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-3.jpg');">
+                                <div class="img-bg-inner">
+                                    <h2>@Model.ElementAt(2).Title</h2>
+                                    <p>@Model.ElementAt(2).ShortDescription</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-4.jpg');">
+                                <div class="img-bg-inner">
+                                    <h2>@Model.ElementAt(3).Title</h2>
+                                    <p>@Model.ElementAt(3).ShortDescription</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="custom-swiper-button-next">
+                        <span class="bi-chevron-right"></span>
+                    </div>
+                    <div class="custom-swiper-button-prev">
+                        <span class="bi-chevron-left"></span>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End Hero Slider Section -->

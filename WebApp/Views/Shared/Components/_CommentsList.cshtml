@@ -1,0 +1,35 @@
+﻿
+@model IList<CommentViewModel>
+
+<!-- ======= Comments ======= -->
+<div class="comments">
+
+@if (Model.Count == 0)
+{
+        <h5 class="comment-title py-4">There are no Comments</h5>
+}
+else
+{
+    @foreach (var comment in Model)
+    {
+        <div class="comment d-flex">
+            <div class="flex-shrink-0">
+                <div class="avatar avatar-sm rounded-circle">
+                    <img class="avatar-img" src="assets/img/person-2.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="flex-shrink-1 ms-2 ms-sm-3">
+                <div class="comment-meta d-flex">
+                    <h6 class="me-2">@comment.Name (@comment.Email)</h6>
+                    <h7>@comment.CommentHeader</h7>
+                    <span class="text-muted"> Commented @comment.CommentTime.FriendlyFormat()</span>
+                </div>
+                <div class="comment-body">
+                    @comment.CommentText
+                </div>
+            </div>
+        </div>
+    }
+}
+
+</div><!-- End Comments -->

@@ -194,5 +194,15 @@ namespace OnlineNewsWebApp.Infrastructure.Services
                 return false;
             }
         }
+
+        public IList<PostViewModel> GetRecommendedPosts(int size)
+        {
+            return _unitOfWork.PostRepository.GetHighestPosts(size).Select(p => _mapper.Map<PostViewModel>(p)).ToList();
+        }
+
+        public IList<PostViewModel> SearchPosts(string keyword)
+        {
+            return _unitOfWork.PostRepository.GetPostsByTitle(keyword).Select(p => _mapper.Map<PostViewModel>(p)).ToList(); ;
+        }
     }
 }

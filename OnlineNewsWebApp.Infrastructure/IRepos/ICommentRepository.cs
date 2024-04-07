@@ -10,12 +10,14 @@ namespace OnlineNewsWebApp.Infrastructure.IRepos
         /// <param name="postId"></param>
         /// <returns></returns>
         IList<Comment> GetCommentsForPost(int postId);
+
         /// <summary>
         /// Get comments of a post
         /// </summary>
         /// <param name="post"></param>
         /// <returns></returns>
         IList<Comment> GetCommentsForPost(Post post);
+
         /// <summary>
         /// Add comment to a post
         /// </summary>

@@ -17,5 +17,8 @@ namespace OnlineNewsWebApp.Core.IServices
         bool Add(PostToCreateViewModel postToCreate);
         PostToUpdateViewModel GetPostToUpdate(int id);
         bool Update(PostToUpdateViewModel postToUpdate);
+        IList<PostViewModel> GetRecommendedPosts(int size);
+
+        IList<PostViewModel> SearchPosts(string keyword);
     }
 }

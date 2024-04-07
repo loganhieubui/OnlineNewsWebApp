@@ -1,0 +1,23 @@
+﻿@model IList<PostViewModel>
+<!-- Trending Section -->
+<div class="col-lg-4">
+
+    <div class="trending">
+        <h3>Trending</h3>
+        <ul class="trending-post">
+            @foreach (var p in Model)
+            {
+                <li>
+                    <a href="single-post.html">
+                        
+                        <h3>@p.Title</h3>
+                        <span class="author">@p.AuthorName</span>
+                    </a>
+                </li>
+            }
+            
+            
+        </ul>
+    </div>
+
+</div> <!-- End Trending Section -->

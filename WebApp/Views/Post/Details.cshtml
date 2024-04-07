@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model PostDetailsViewModel
+
+<section class="single-post-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 post-content" data-aos="fade-up">
+
+                <!-- ======= Single Post Content ======= -->
+                <div class="single-post">
+                    <div class="post-meta"><span class="date">@Model.Category?.Name</span> <span class="mx-1">&bullet;</span> <span>@Model.PostedOn.ToShortDateString()</span></div>
+                    <h1 class="mb-5">@Model.Title</h1>
+                    <p><span class="firstcharacter">L</span>orem ipsum dolor sit, amet consectetur adipisicing elit. Ratione officia sed, suscipit distinctio, numquam omnis quo fuga ipsam quis inventore voluptatum recusandae culpa, unde doloribus saepe labore alias voluptate expedita? Dicta delectus beatae explicabo odio voluptatibus quas, saepe qui aperiam autem obcaecati, illo et! Incidunt voluptas culpa neque repellat sint, accusamus beatae, cumque autem tempore quisquam quam eligendi harum debitis.</p>
+
+                    <figure class="my-4">
+                        <img src="assets/img/post-landscape-1.jpg" alt="" class="img-fluid">
+                        <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
+                    </figure>
+                    <p>@Model.ShortDescription</p>
+                    <p>@Model.PostContent</p>
+                    <figure class="my-4">
+                        <img src="assets/img/post-landscape-5.jpg" alt="" class="img-fluid">
+                        <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
+                    </figure>
+                    <p>Quis molestiae, dolorem consequuntur labore perferendis enim accusantium commodi optio, sequi magnam ad consectetur iste omnis! Voluptatibus, quia officia esse necessitatibus magnam tempore reprehenderit quo aspernatur! Assumenda, minus dolorem repellendus corporis corrupti quia temporibus repudiandae in. Sit rem aut, consectetur repudiandae perferendis nemo alias, iure ipsam omnis quam soluta, nobis animi quis aliquam blanditiis at. Dicta nemo vero sequi exercitationem.</p>
+                    <p>Architecto ex id at illum aperiam corporis, quidem magnam doloribus non eligendi delectus laborum porro molestiae beatae eveniet dolor odit optio soluta dolores! Eaque odit a nihil recusandae, error repellendus debitis ex autem ab commodi, maiores officiis doloribus provident optio, architecto assumenda! Nihil cum laboriosam eos dolore aliquid perferendis amet doloremque quibusdam odio soluta vero odit, ipsa, quisquam quod nulla.</p>
+                    <p>Consequuntur corrupti fugiat quod! Ducimus sequi nemo illo ad necessitatibus amet nobis corporis et quasi. Optio cum neque fuga. Ad excepturi magnam quisquam ex voluptatibus vitae aut nam quidem doloribus, architecto perspiciatis sit consequatur pariatur alias animi expedita quas? Et doloribus voluptatibus perferendis qui fugiat voluptatum autem facere aspernatur quidem quae assumenda iste, sit similique, necessitatibus laborum magni. Ea, dolores!</p>
+                    <p>Possimus temporibus rerum illo quia repudiandae provident sed quas atque. Ipsam adipisci accusamus iste optio illo aliquam molestias? Voluptatibus, veniam recusandae facilis nobis perspiciatis rem similique, nisi ad explicabo ipsa voluptatum, inventore molestiae natus adipisci? Fuga delectus quia assumenda totam aspernatur. Nobis hic ea rem, quaerat voluptate vero illum laboriosam omnis aspernatur labore, natus ex iusto ducimus exercitationem a officia.</p>
+                </div><!-- End Single Post Content -->
+
+                @*Using js function(id="comments-box) in wwwroot/js/site.js to load comments*@
+                <div id="comments-box">
+                </div>
+
+               
+                <!-- ======= Comments Form ======= -->
+                <div id="add-comment-box">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="comment-header" class="form-label">Header</label>
+                            <input type="text" class="form-control" id="comment-header" placeholder="header...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comment-email" class="form-label">Username</label>
+                            <input type="email" class="form-control" id="comment-email" placeholder="your email...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comment-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="comment-name" placeholder="your name...">
+                        </div>
+                        <div class="col-12">
+                            <label for="comment-text" class="form-label">Example comment</label>
+                            <textarea class="form-control" id="comment-text" rows="3" placeholder="comment in here..."></textarea>
+                        </div>
+                        <div class="col-12 mb-3">
+                            @*using ajax function(id="submit-comment-btn") in site.js in wwwroot/js/site.js to submit comments*@
+                            <button type="submit" id="submit-comment-btn" class="btn btn-primary">Submit</button>
+                            <span class="text-danger" hidden id="submit-comment-result">Name, Username and comment text must not be empty</span>
+                        </div>
+                    </div>
+                </div><!-- End Comments Form -->
+            </div>
+
+            <div class="col-md-3">
+            @await Html.PartialAsync("Components/_PostSideBar")
+            </div>
+        </div>
+    </div>
+</section>

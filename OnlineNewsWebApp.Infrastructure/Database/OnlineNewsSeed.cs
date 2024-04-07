@@ -130,10 +130,13 @@ namespace OnlineNewsWebApp.Infrastructure.Database
                     Title = LoremNET.Lorem.Words(3),
                     UrlSlug = LoremNET.Lorem.Words(3).ToLower().Replace(' ', '-'),
                     ShortDescription = LoremNET.Lorem.Words(13),
+                    // generate content with 10-20 words, 4-8 sentences
                     PostContent = LoremNET.Lorem.Paragraph(10, 20, 4, 8),
+                    // generate datetime of a post from 10 days ago until recently
                     PostedOn = LoremNET.Lorem.DateTime(DateTime.Now.AddDays(-10), DateTime.Now),
                     Published = true,
-                    CategoryId = LoremNET.RandomHelper.Instance.Next(1, 10),
+                    // other properties are generated randomly
+                    CategoryId = LoremNET.RandomHelper.Instance.Next(1, 11),
                     RateCount = LoremNET.RandomHelper.Instance.Next(10, 30),
                     TotalRate = LoremNET.RandomHelper.Instance.Next(100, 300),
                     ViewCount = LoremNET.RandomHelper.Instance.Next(100, 300),
@@ -154,22 +157,39 @@ namespace OnlineNewsWebApp.Infrastructure.Database
             }
 
             // PostTags
-            for (int i = 1; i <= 30; i++)
+            // map each post with 3 different random tags 
+            for (int i = 0; i < 50; i++)
             {
                 int j = LoremNET.RandomHelper.Instance.Next(0, 20);
+                int k = LoremNET.RandomHelper.Instance.Next(0, 20);
+                while (k == j) k = LoremNET.RandomHelper.Instance.Next(0, 20);
+                int l = LoremNET.RandomHelper.Instance.Next(0, 20);
+                while (l == j || l == k) l = LoremNET.RandomHelper.Instance.Next(0, 20); ; 
+
                 postTags.Add(new PostTagMap
                 {
-                    PostId = posts[LoremNET.RandomHelper.Instance.Next(0, 50)].Id,
+                    PostId = posts[i].Id,
                     TagId = tags[j].Id
                 });
+                postTags.Add(new PostTagMap
+                {
+                    PostId = posts[i].Id,
+                    TagId = tags[k].Id
+                });
+                postTags.Add(new PostTagMap
+                {
+                    PostId = posts[i].Id,
+                    TagId = tags[l].Id
+                });
+                // update count-posts attribute of each tags
                 tags[j].Count += 1;
+                tags[k].Count += 1;
+                tags[l].Count += 1;
             }
-
-            // update count posts attribute of tags
-            
+                        
 
             // Comments
-            for (int i = 1; i <= 20; i++)
+            for (int i = 1; i <= 50; i++)
             {
                 comments.Add(new Comment
                 {
