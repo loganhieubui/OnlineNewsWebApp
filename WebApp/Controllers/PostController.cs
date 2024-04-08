@@ -43,7 +43,7 @@ namespace OnlineNews.MVCWebApp.Controllers
             return View(post);
         }
 
-        [Route("post/{id}")]
+        //[Route("post/{id}")]
         public IActionResult Details(int id)
         {
             var post = _postService.GetDetailOfPosts(id);
@@ -60,7 +60,7 @@ namespace OnlineNews.MVCWebApp.Controllers
             {
                 return PartialView("Components/NotFound");
             }
-            return PartialView("Components/_ListPostsPartial", post2);
+            return View("Components/_ListPostsPartial", post2);
         }
     }
 }

@@ -42,11 +42,12 @@ namespace OnlineNewsWebApp.Infrastructure.Mapper
             CreateMap<Category, CategoryToUpdateViewModel>();
             CreateMap<Comment, CommentToUpdateViewModel>();
             CreateMap<CommentToUpdateViewModel, Comment>();
-            CreateMap<PostToUpdateViewModel, Post>();
+            
             CreateMap<Post, PostToUpdateViewModel>()
                 .ForMember(
                 p => p.TagIds, epvm => epvm.MapFrom(p => p.PostTagMaps.Select(ptm => ptm.TagId))
                 );
+            CreateMap<PostToUpdateViewModel, Post>();
             CreateMap<Category, CategoryDetailsViewModel>();
             CreateMap<Comment, CommentDetailsViewModel>()
                 .ForMember(

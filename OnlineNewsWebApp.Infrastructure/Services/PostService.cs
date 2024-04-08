@@ -3,6 +3,7 @@ using OnlineNewsWebApp.Infrastructure.IRepos;
 using OnlineNewsWebApp.Core.ViewModels.Post;
 using OnlineNewsWebApp.Core.IServices;
 using Microsoft.Extensions.Logging;
+using OnlineNewsWebApp.Core.Entities;
 
 namespace OnlineNewsWebApp.Infrastructure.Services
 {
@@ -135,7 +136,7 @@ namespace OnlineNewsWebApp.Infrastructure.Services
         }
         public bool Add(PostToCreateViewModel postToCreate)
         {
-            var post = new Core.Entities.Post
+            var post = new Post
             {
                 CategoryId = postToCreate.CategoryId,
                 PostContent = postToCreate.PostContent,
@@ -180,7 +181,7 @@ namespace OnlineNewsWebApp.Infrastructure.Services
         {
             try
             {
-                var post = _mapper.Map<Core.Entities.Post>(postToUpdate);
+                var post = _mapper.Map<Post>(postToUpdate);
                 post.Modified = DateTime.Now;
                 _unitOfWork.PostRepository.Update(post);
                 _unitOfWork.PostRepository.DeleteTags(postToUpdate.Id);

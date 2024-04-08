@@ -13,7 +13,7 @@
                 <div class="section-header d-flex justify-content-between align-items-center mb-5">
 
                     <h2>@cate.Name </h2>
-                    <div><a href="category.html" class="more">See All @cate.Name</a></div>
+                    <div><a asp-controller="Category" asp-action="Details" asp-route-slug=@cate.Name class="more">See All @cate.Name</a></div>
                 </div>
 
                 @while (i < posts.Count)
@@ -21,13 +21,13 @@
                     <div class="row g-5">
                         <div class="col-lg-4">
                             <div class="post-entry-1 lg">
-                                <a href="single-post.html"><img src="assets/img/post-landscape-8.jpg" alt="" class="img-fluid"></a>
+                                <a href="single-post.html"><img src="~/assets/img/post-landscape-8.jpg" alt="" class="img-fluid"></a>
                                 <div class="post-meta"><span class="date">@cate.Name</span> <span class="mx-1">&bullet;</span> <span>@posts.First().PostedOn.ToShortDateString()</span></div>
-                                <h2><a href="single-post.html">@posts.First().Title</a></h2>
+                                <h2><a asp-action="Details" asp-controller="Post" asp-route-id=@posts.First().Id>@posts.First().Title</a></h2>
                                 <p class="mb-4 d-block">@posts.First().ShortDescription</p>
 
                                 <div class="d-flex align-items-center author">
-                                    <div class="photo"><img src="assets/img/person-7.jpg" alt="" class="img-fluid"></div>
+                                    <div class="photo"><img src="~/assets/img/person-7.jpg" alt="" class="img-fluid"></div>
                                     <div class="name">
                                         <h3 class="m-0 p-0">@posts.First().AuthorName</h3>
                                     </div>
@@ -42,9 +42,9 @@
                             <div class="row g-5">
                                 <div class="col-lg-4 border-start custom-border">
                                     <div class="post-entry-1">
-                                        <a href="single-post.html"><img src="assets/img/post-landscape-6.jpg" alt="" class="img-fluid"></a>
+                                        <a asp-action="Details" asp-controller="Post" asp-route-id=@posts.ElementAt(i).Id><img src="~/assets/img/post-landscape-6.jpg" alt="" class="img-fluid"></a>
                                         <div class="post-meta"><span class="date">@cate.Name</span> <span class="mx-1">&bullet;</span> <span>@posts.ElementAt(i).PostedOn.ToShortTimeString()</span></div>
-                                        <h2><a href="single-post.html">@posts.ElementAt(i).Title</a></h2>
+                                        <h2><a asp-action="Details" asp-controller="Post" asp-route-id=@posts.ElementAt(i).Id>@posts.ElementAt(i).Title</a></h2>
                                     </div>
 
                                     @{
@@ -53,9 +53,9 @@
                                     @if (i == posts.Count) break;
 
                                     <div class="post-entry-1">
-                                        <a href="single-post.html"><img src="assets/img/post-landscape-5.jpg" alt="" class="img-fluid"></a>
+                                        <a asp-action="Details" asp-controller="Post" asp-route-id=@posts.ElementAt(i).Id><img src="~/assets/img/post-landscape-5.jpg" alt="" class="img-fluid"></a>
                                         <div class="post-meta"><span class="date">@cate.Name</span> <span class="mx-1">&bullet;</span> <span>@posts.ElementAt(i).PostedOn.ToShortTimeString()</span></div>
-                                        <h2><a href="single-post.html">@posts.ElementAt(i).Title</a></h2>
+                                        <h2><a asp-action="Details" asp-controller="Post" asp-route-id=@posts.ElementAt(i).Id>@posts.ElementAt(i).Title</a></h2>
                                     </div>
 
                                     @{
@@ -65,9 +65,9 @@
                                 </div>
                                 <div class="col-lg-4 border-start custom-border">
                                     <div class="post-entry-1">
-                                        <a href="single-post.html"><img src="assets/img/post-landscape-3.jpg" alt="" class="img-fluid"></a>
+                                        <a asp-action="Details" asp-controller="Post" asp-route-id=@posts.ElementAt(i).Id><img src="~/assets/img/post-landscape-3.jpg" alt="" class="img-fluid"></a>
                                         <div class="post-meta"><span class="date">@cate.Name</span> <span class="mx-1">&bullet;</span> <span>@posts.ElementAt(i).PostedOn.ToShortTimeString()</span></div>
-                                        <h2><a href="single-post.html">@posts.ElementAt(i).Title</a></h2>
+                                        <h2><a asp-action="Details" asp-controller="Post" asp-route-id=@posts.ElementAt(i).Id>@posts.ElementAt(i).Title</a></h2>
                                     </div>
 
                                     @{
@@ -76,9 +76,9 @@
                                     @if (i == posts.Count) break;
 
                                     <div class="post-entry-1">
-                                        <a href="single-post.html"><img src="assets/img/post-landscape-2.jpg" alt="" class="img-fluid"></a>
+                                        <a asp-action="Details" asp-controller="Post" asp-route-id=@posts.ElementAt(i).Id><img src="~/assets/img/post-landscape-2.jpg" alt="" class="img-fluid"></a>
                                         <div class="post-meta"><span class="date">@cate.Name</span> <span class="mx-1">&bullet;</span> <span>@posts.ElementAt(i).PostedOn.ToShortTimeString()</span></div>
-                                        <h2><a href="single-post.html">@posts.ElementAt(i).Title</a></h2>
+                                        <h2><a asp-action="Details" asp-controller="Post" asp-route-id=@posts.ElementAt(i).Id>@posts.ElementAt(i).Title</a></h2>
                                     </div>
 
                                     @{

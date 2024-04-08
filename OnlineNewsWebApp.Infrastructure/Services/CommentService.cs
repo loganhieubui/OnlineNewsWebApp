@@ -3,6 +3,7 @@ using OnlineNewsWebApp.Infrastructure.IRepos;
 using OnlineNewsWebApp.Core.ViewModels.Comment;
 using OnlineNewsWebApp.Core.IServices;
 using Microsoft.Extensions.Logging;
+using OnlineNewsWebApp.Core.Entities;
 
 namespace OnlineNewsWebApp.Infrastructure.Services
 {
@@ -105,7 +106,7 @@ namespace OnlineNewsWebApp.Infrastructure.Services
 
             try
             {
-                var comment = _mapper.Map<Core.Entities.Comment>(commentToUpdate);
+                var comment = _mapper.Map<Comment>(commentToUpdate);
                 _unitOfWork.CommentRepository.Update(comment);
                 _unitOfWork.Save();
                 return true;

@@ -3,6 +3,7 @@ using OnlineNewsWebApp.Infrastructure.IRepos;
 using OnlineNewsWebApp.Core.ViewModels.Tag;
 using OnlineNewsWebApp.Core.IServices;
 using Microsoft.Extensions.Logging;
+using OnlineNewsWebApp.Core.Entities;
 
 namespace OnlineNewsWebApp.Infrastructure.Services
 {
@@ -83,7 +84,7 @@ namespace OnlineNewsWebApp.Infrastructure.Services
 
         public bool Add(TagToCreateViewModel tagToCreate)
         {
-            var tag = new Core.Entities.Tag
+            var tag = new Tag
             {
                 Name = tagToCreate.Name,
                 Count = 0
@@ -117,7 +118,7 @@ namespace OnlineNewsWebApp.Infrastructure.Services
 
         public bool Update(TagToUpdateViewModel tagToUpdate)
         {
-            var tag = _mapper.Map<Core.Entities.Tag>(tagToUpdate);
+            var tag = _mapper.Map<Tag>(tagToUpdate);
             try
             {
                 _unitOfWork.TagRepository.Update(tag);

@@ -9,7 +9,7 @@
                 <div class="swiper sliderFeaturedPosts">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-1.jpg');">
+                            <a asp-action="Details" asp-controller="Post" asp-route-id=@Model.First().Id class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-1.jpg');">
                                 <div class="img-bg-inner">
                                     <h2>@Model.First().Title</h2>
                                     <p>@Model.First().ShortDescription</p>
@@ -18,7 +18,7 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-2.jpg');">
+                            <a asp-action=" Details" asp-controller="Post" asp-route-id=@Model.ElementAt(1).Id class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-2.jpg');">
                                 <div class="img-bg-inner">
                                     <h2>@Model.ElementAt(1).Title</h2>
                                     <p>@Model.ElementAt(1).ShortDescription</p>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-3.jpg');">
+                            <a asp-action="Details" asp-controller="Post" asp-route-id=@Model.ElementAt(2).Id class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-3.jpg');">
                                 <div class="img-bg-inner">
                                     <h2>@Model.ElementAt(2).Title</h2>
                                     <p>@Model.ElementAt(2).ShortDescription</p>
@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <a href="single-post.html" class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-4.jpg');">
+                            <a asp-action="Details" asp-controller="Post" asp-route-id=@Model.ElementAt(3).Id class="img-bg d-flex align-items-end" style="background-image: url('assets/img/post-slide-4.jpg');">
                                 <div class="img-bg-inner">
                                     <h2>@Model.ElementAt(3).Title</h2>
                                     <p>@Model.ElementAt(3).ShortDescription</p>

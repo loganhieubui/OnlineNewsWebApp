@@ -8,7 +8,7 @@
             @foreach (var p in Model)
             {
                 <li>
-                    <a href="single-post.html">
+                    <a asp-action="Details" asp-controller="Post" asp-route-id=@p.Id>
                         
                         <h3>@p.Title</h3>
                         <span class="author">@p.AuthorName</span>

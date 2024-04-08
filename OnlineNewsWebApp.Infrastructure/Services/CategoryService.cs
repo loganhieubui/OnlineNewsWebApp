@@ -3,6 +3,7 @@ using OnlineNewsWebApp.Infrastructure.IRepos;
 using OnlineNewsWebApp.Core.ViewModels.Category;
 using OnlineNewsWebApp.Core.IServices;
 using Microsoft.Extensions.Logging;
+using OnlineNewsWebApp.Core.Entities;
 
 namespace OnlineNewsWebApp.Infrastructure.Services
 {
@@ -73,7 +74,7 @@ namespace OnlineNewsWebApp.Infrastructure.Services
 
         public bool Add(CategoryToCreateViewModel categoryToCreate)
         {
-            var category = _mapper.Map<Core.Entities.Category>(categoryToCreate);
+            var category = _mapper.Map<Category>(categoryToCreate);
             try
             {
                 _unitOfWork.CategoryRepository.Insert(category);
@@ -102,7 +103,7 @@ namespace OnlineNewsWebApp.Infrastructure.Services
 
         public bool Update(CategoryToUpdateViewModel categoryToUpdate)
         {
-            var category = _mapper.Map<Core.Entities.Category>(categoryToUpdate);
+            var category = _mapper.Map<Category>(categoryToUpdate);
             try
             {
                 _unitOfWork.CategoryRepository.Update(category);

@@ -8,12 +8,12 @@ namespace OnlineNewsWebApp.Infrastructure.Repos
     {
         public CommentRepository(OnlineNewsContext context) : base(context) { }
 
-        public IList<Core.Entities.Comment> GetCommentsForPost(int postId)
+        public IList<Comment> GetCommentsForPost(int postId)
         {
             var c = Context.Comments!.ToList();
             return Context.Comments!.Where(c => c.PostId == postId).ToList();
         }
-        public IList<Core.Entities.Comment> GetCommentsForPost(Post post)
+        public IList<Comment> GetCommentsForPost(Post post)
         {
             return Context.Comments!.Where(c => c.PostId == post.Id).ToList();
         }

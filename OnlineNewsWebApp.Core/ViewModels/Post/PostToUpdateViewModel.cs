@@ -32,5 +32,6 @@ namespace OnlineNewsWebApp.Core.ViewModels.Post
         public DateTime PostedOn { get; set; }
         public int CategoryId { get; set; }
         public IList<int> TagIds { get; set; }
+        public string? AuthorId { get; set; }
     }
 }

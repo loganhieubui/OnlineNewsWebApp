@@ -27,7 +27,7 @@
                     
                     <div class="post-entry-1 border-bottom">
                         <div class="post-meta"><span class="date">@p.Category.Name</span> <span class="mx-1">&bullet;</span> <span>@p.PostedOn.ToShortDateString()</span></div>
-                        <h2 class="mb-2"><a href="#">@p.ShortDescription</a></h2>
+                        <h2 class="mb-2"><a asp-action="Details" asp-controller="Post" asp-route-id=@p.Id>@p.Title</a></h2>
                         <span class="author mb-3 d-block">@p.AuthorName</span>
                     </div>
                 }
@@ -38,7 +38,7 @@
                 @foreach (var p in PostService.GetMostViewedPosts(5)) {
                     <div class="post-entry-1 border-bottom">
                         <div class="post-meta"><span class="date">@p.Category.Name</span> <span class="mx-1">&bullet;</span> <span>@p.PostedOn.ToShortDateString()</span></div>
-                        <h2 class="mb-2"><a href="#">@p.ShortDescription</a></h2>
+                        <h2 class="mb-2"><a asp-action="Details" asp-controller="Post" asp-route-id=@p.Id>@p.Title</a></h2>
                         <span class="author mb-3 d-block">@p.AuthorName</span>
                     </div>
                 }                                
@@ -51,7 +51,7 @@
                 {
                     <div class="post-entry-1 border-bottom">
                         <div class="post-meta"><span class="date">@p.Category.Name</span> <span class="mx-1">&bullet;</span> <span>@p.PostedOn.ToShortDateString()</span></div>
-                        <h2 class="mb-2"><a href="#">@p.ShortDescription</a></h2>
+                        <h2 class="mb-2"><a asp-action="Details" asp-controller="Post" asp-route-id=@p.Id>@p.Title</a></h2>
                         <span class="author mb-3 d-block">@p.AuthorName</span>
                     </div>
                 }
@@ -66,7 +66,7 @@
         <div class="video-post">
             <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU" class="glightbox link-video">
                 <span class="bi-play-fill"></span>
-                <img src="assets/img/post-landscape-5.jpg" alt="" class="img-fluid">
+                <img src="~/assets/img/post-landscape-5.jpg" alt="" class="img-fluid">
             </a>
         </div>
     </div><!-- End Video -->
@@ -76,7 +76,7 @@
         <ul class="aside-links list-unstyled">
             @foreach(var c in CategoriesService.GetAllCategories())
             {
-                <li><a href="category.html"><i class="bi bi-chevron-right"></i> @c.Name</a></li>
+                <li><a asp-action="Details" asp-controller="Category" asp-route-slug=@c.Name><i class="bi bi-chevron-right"></i> @c.Name</a></li>
             }            
         </ul>
     </div><!-- End Categories -->
@@ -86,7 +86,7 @@
         <ul class="aside-tags list-unstyled">
             @foreach(var t in TagService.GetAllTags())
             {
-                <li><a href="category.html">@t.Name</a></li>
+                <li><a asp-action="Details" asp-controller="Tag" asp-route-slug=@t.Name>@t.Name</a></li>
             }            
         </ul>
     </div><!-- End Tags -->

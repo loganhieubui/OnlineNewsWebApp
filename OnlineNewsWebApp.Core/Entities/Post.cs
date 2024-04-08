@@ -37,7 +37,8 @@ namespace OnlineNewsWebApp.Core.Entities
         public Category? Category { get; set; }
         public ICollection<PostTagMap> PostTagMaps { get; set; }
         public ICollection<Comment> Comments { get; set; }
-        public string AuthorId { get; set; }
-        public User Author { get; set; }
+        [NotMapped]
+        public string? AuthorId { get; set; }
+        public User? Author { get; set; }
     }
 }

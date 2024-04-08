@@ -18,7 +18,7 @@ namespace OnlineNewsWebApp.Infrastructure.Database
             //Roles
             var roles = new IdentityRole[]
             {
-                // assume that 0 is writer, 1 is admin, 2 is reader
+                // assume that 0 is writer, 1 is reader, 2 is admin
                 new IdentityRole
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -136,7 +136,7 @@ namespace OnlineNewsWebApp.Infrastructure.Database
                     PostedOn = LoremNET.Lorem.DateTime(DateTime.Now.AddDays(-10), DateTime.Now),
                     Published = true,
                     // other properties are generated randomly
-                    CategoryId = LoremNET.RandomHelper.Instance.Next(1, 11),
+                    CategoryId = i % 10 + 1,
                     RateCount = LoremNET.RandomHelper.Instance.Next(10, 30),
                     TotalRate = LoremNET.RandomHelper.Instance.Next(100, 300),
                     ViewCount = LoremNET.RandomHelper.Instance.Next(100, 300),
@@ -189,7 +189,7 @@ namespace OnlineNewsWebApp.Infrastructure.Database
                         
 
             // Comments
-            for (int i = 1; i <= 50; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 comments.Add(new Comment
                 {
@@ -199,7 +199,7 @@ namespace OnlineNewsWebApp.Infrastructure.Database
                     CommentTime = LoremNET.Lorem.DateTime(DateTime.Now.AddDays(-10), DateTime.Now),
                     Email = LoremNET.Lorem.Email(),
                     Name = LoremNET.Lorem.Words(2),
-                    PostId = LoremNET.RandomHelper.Instance.Next(0, 50)
+                    PostId = LoremNET.RandomHelper.Instance.Next(1, 51)
                 });
             }
 
