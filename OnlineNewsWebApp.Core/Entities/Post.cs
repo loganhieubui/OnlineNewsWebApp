@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 using OnlineNewsWebApp.Core.Entities;
 
@@ -12,6 +13,7 @@ namespace OnlineNewsWebApp.Core.Entities
 
         // main content and short description for displaying
         public string ShortDescription { get; set; }
+        [MaxLength]
         public string PostContent { get; set; }
 
         // link of a post

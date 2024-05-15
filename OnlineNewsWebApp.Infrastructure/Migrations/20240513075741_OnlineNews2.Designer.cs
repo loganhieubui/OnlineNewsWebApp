@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineNewsWebApp.Infrastructure.Database;
 
@@ -11,9 +12,10 @@ using OnlineNewsWebApp.Infrastructure.Database;
 namespace OnlineNewsWebApp.Infrastructure.Migrations
 {
     [DbContext(typeof(OnlineNewsContext))]
-    partial class OnlineNewsContextModelSnapshot : ModelSnapshot
+    [Migration("20240513075741_OnlineNews2")]
+    partial class OnlineNews2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

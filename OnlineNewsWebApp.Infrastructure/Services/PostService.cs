@@ -47,7 +47,10 @@ namespace OnlineNewsWebApp.Infrastructure.Services
 
         public IList<PostViewModel> GetMostViewedPosts(int size)
         {
-            return _unitOfWork.PostRepository.GetMostViewedPosts(size).Select(p => _mapper.Map<PostViewModel>(p)).ToList();
+            var p1 = _unitOfWork.PostRepository.GetMostViewedPosts(size);
+            var p2 = p1.Select(p => _mapper.Map<PostViewModel>(p)).ToList();
+            return p2;
+            //return _unitOfWork.PostRepository.GetMostViewedPosts(size).Select(p => _mapper.Map<PostViewModel>(p)).ToList();
         }
 
         public PostDetailsViewModel GetDetailOfPosts(int id)

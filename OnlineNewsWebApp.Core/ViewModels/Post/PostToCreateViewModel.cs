@@ -14,6 +14,7 @@ namespace OnlineNewsWebApp.Core.ViewModels.Post
         public string ShortDescription { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Post content must be required")]
+        [StringLength(10000, ErrorMessage = "Post content must not be longer than 10000 characters")]
         public string PostContent { get; set; }
 
         public bool Published { get; set; }

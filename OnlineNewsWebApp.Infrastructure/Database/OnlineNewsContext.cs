@@ -39,7 +39,7 @@ namespace OnlineNewsWebApp.Infrastructure.Database
             modelBuilder.ApplyConfiguration(new PostTagMapConfig());
             modelBuilder.ApplyConfiguration(new CommentConfig());
 
-            modelBuilder.SeedData();
+            modelBuilder.SeedData2();
         }
 
         public DbSet<Category>? Categories { get; set; }

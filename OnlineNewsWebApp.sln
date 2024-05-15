@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34601.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineNews.MVCWebApp", "WebApp\OnlineNews.MVCWebApp.csproj", "{5D58E5DE-03CA-4322-8245-22C473802FD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineNews.MVCWebApp", "WebApp\OnlineNews.MVCWebApp.csproj", "{5D58E5DE-03CA-4322-8245-22C473802FD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineNewsWebApp.Core", "OnlineNewsWebApp.Core\OnlineNewsWebApp.Core.csproj", "{CCE1A73A-158A-4A0D-B0B3-1A84107E2AF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineNewsWebApp.Core", "OnlineNewsWebApp.Core\OnlineNewsWebApp.Core.csproj", "{CCE1A73A-158A-4A0D-B0B3-1A84107E2AF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineNewsWebApp.Infrastructure", "OnlineNewsWebApp.Infrastructure\OnlineNewsWebApp.Infrastructure.csproj", "{AC406037-2376-4099-BD87-065990DB5DC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineNewsWebApp.Infrastructure", "OnlineNewsWebApp.Infrastructure\OnlineNewsWebApp.Infrastructure.csproj", "{AC406037-2376-4099-BD87-065990DB5DC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSeedData", "TestSeedData\TestSeedData.csproj", "{5E5A8DC9-A73C-44E1-984B-AC4D1DC6D3BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{AC406037-2376-4099-BD87-065990DB5DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC406037-2376-4099-BD87-065990DB5DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC406037-2376-4099-BD87-065990DB5DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E5A8DC9-A73C-44E1-984B-AC4D1DC6D3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5A8DC9-A73C-44E1-984B-AC4D1DC6D3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5A8DC9-A73C-44E1-984B-AC4D1DC6D3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5A8DC9-A73C-44E1-984B-AC4D1DC6D3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

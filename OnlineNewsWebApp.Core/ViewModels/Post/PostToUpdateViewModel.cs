@@ -16,6 +16,7 @@ namespace OnlineNewsWebApp.Core.ViewModels.Post
 
         [Required(ErrorMessage = "Post content must be required")]
         [Column("Post Content")]
+        [StringLength(10000, ErrorMessage = "Short description must not be longer than 10000 characters")]
         public string PostContent { get; set; }
 
         [Required(ErrorMessage = "Url slug must be required")]
