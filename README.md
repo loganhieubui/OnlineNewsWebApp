@@ -13,7 +13,7 @@ I apply clean-architecture for easy maintaining purpose, which means my project 
   + IRepos: define the function of context
   + Repos: implement context function
   + Services: implement IServices
-  + Database: configure the connection to the database and seed data using Lorem.NET package to generate random text
+  + Database: configure the connection to the database and seed data using Lorem.NET package to generate random text and HtmlAgilityPack to crawl post data from real website. In the furture, these data may be used for analyzing users preference and synonym searching.
   + Migration: initialized data
 - WebApp:
   + Controller: for post, tag, comment, category and default home
