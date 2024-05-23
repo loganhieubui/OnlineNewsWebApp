@@ -24,7 +24,7 @@ namespace OnlineNewsWebApp.Infrastructure.Services
         {
             try
             {
-                var newUser = _mapper.Map<Core.Entities.User>(user);
+                var newUser = _mapper.Map<User>(user);
                 newUser.EmailConfirmed = true;
                 var hasher = new PasswordHasher<User>();
                 newUser.PasswordHash = hasher.HashPassword(newUser, user.Password);

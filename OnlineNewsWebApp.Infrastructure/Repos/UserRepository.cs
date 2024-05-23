@@ -16,6 +16,8 @@ namespace OnlineNewsWebApp.Infrastructure.Repos
             var roleIds = Context.UserRoles.Where(ur => ur.UserId == id).Select(ur => ur.RoleId).ToList();
             return Context.Roles.Where(r => roleIds.Contains(r.Id)).ToList();
         }
+
+        // apply all roles in roleIds to user who has userId=id
         public void AddRoles(string id, IList<string> roleIds)
         {
             var userRoles = roleIds.Select(roleId => new IdentityUserRole<string>

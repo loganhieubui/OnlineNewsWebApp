@@ -1,11 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using OnlineNewsWebApp.Core.Entities
+@inject SignInManager<User> SignInManager
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>ZenBlog Bootstrap Template</title>
+    <title>Online News</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -47,7 +51,7 @@
             <a asp-action="index" asp-controller="home" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="~/assets/img/logo.png" alt=""> -->
-                <h1>ZenBlog</h1>
+                <h1>Online News</h1>
             </a>
 
             <nav id="navbar" class="navbar">
@@ -62,6 +66,32 @@
                     </li>
                     <li><a asp-action="About" asp-controller="Home">About</a></li>
                     <li><a asp-action="Contact" asp-controller="Home">Contact</a></li>
+                    @*If the user is signed-in display Logout link*@
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <form method="post" asp-controller="account" asp-action="logout">
+                                    <button type="submit" style="width:auto"
+                                            class="nav-link btn btn-link py-0">
+                                        Logout @User?.Identity?.Name
+                                    </button>
+                                </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a asp-controller="account" asp-action="register">
+                                Register
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="account" asp-action="login">
+                                Login
+                            </a>
+                        </li>
+                    }
+
                     <li><a href="/admin">Admin Page</a></li>
                 </ul>
             </nav><!-- .navbar -->
